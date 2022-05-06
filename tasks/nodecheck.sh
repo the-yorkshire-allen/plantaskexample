@@ -31,4 +31,4 @@ status_array=( "locked" "unlocked" )
 status=${status_array[ $RANDOM % ${#status_array[@]} ]}
 
 echo "{\"message\": \"${status}\"}"
-exit 0
+exit $(( $RANDOM % 2 ))

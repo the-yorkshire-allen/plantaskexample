@@ -1,0 +1,11 @@
+[Version]
+Signature = "$WindowsNT$"
+
+[NewRequest]
+Subject = "CN=ca-win2016-9055b0-0.us-west1-c.c.emea-ps-lab.internal,OU=PuppetLabs"
+Exportable = TRUE
+KeyLength = 2048
+
+[RequestAttributes]
+CertificateTemplate=TestTemplate
+Details=

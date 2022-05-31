@@ -10,22 +10,22 @@ success() {
   echo "${1}"
 }
 
-if [[ $# -ne 1 ]]; then
-   echo "Usage: dir_fs_check <directory>"
-   exit 1
-fi
+#if [[ $# -ne 1 ]]; then
+#   echo "Usage: dir_fs_check <directory>"
+#   exit 1
+#fi
 
-if [ ! -d "${1}" ]; then
-   echo "Directory ${1} does not exit"
+if [ ! -d "${PT_directory}" ]; then
+   echo "Directory ${PT_directory} does not exit"
    exit 2
 fi
 
 # declare variables
-dir_df="$(df -Ph ${1} | jq -Rsa .)"
+dir_df="$(df -Ph ${PT_directory} | jq -Rsa .)"
 kernel_rpms="$(rpm -qa | grep ^kernel-[1-4] | jq -Rsa .)"
-directory_files="$(ls -al ${1} | jq -Rsa .)"
-directory_usage="$(du -a -d 1 ${1} | sort -n | jq -Rsa .)"
-percentage_used="$(df -Ph ${1} | awk 'NR==2 {print substr($5, 1, length($5)-1)}')"
+directory_files="$(ls -al ${PT_directory} | jq -Rsa .)"
+directory_usage="$(du -a -d 1 ${PT_directory} | sort -n | jq -Rsa .)"
+percentage_used="$(df -Ph ${PT_directory} | awk 'NR==2 {print substr($5, 1, length($5)-1)}')"
 
 success "{\"percentage_used\":\"${percentage_used}\",\"dir_df\":${dir_df},\"kernel_rpms\":${kernel_rpms},\"directory_files\":${directory_files},\"directory_usage\":${directory_usage}}"
 

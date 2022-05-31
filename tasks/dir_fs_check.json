@@ -1,0 +1,11 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "NatWest check directory usage",
+  "parameters": {
+     "directory": {
+        "description" : "Directory in which to perform the check",
+        "type": "String[1]"
+     }
+  }
+}

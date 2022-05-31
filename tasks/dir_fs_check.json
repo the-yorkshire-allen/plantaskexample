@@ -4,8 +4,12 @@
   "description": "NatWest check directory usage",
   "parameters": {
      "directory": {
-        "description" : "Directory in which to perform the check",
+        "description": "Directory in which to perform the check",
         "type": "String[1]"
+     },
+     "json": {
+        "description": "Is the output JSON?",
+        "type": "Optional[Boolean]"
      }
   }
 }

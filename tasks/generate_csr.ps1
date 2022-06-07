@@ -1,10 +1,10 @@
 [CmdletBinding()]
 Param(
  [Parameter(Mandatory = $True)]
- [String] $AuthCode
+ [String] $authorisation_code
 )
 
-if ($AuthCode -eq $null -or $AuthCode -eq "") {
+if ($authorisation_code -eq $null -or $authorisation_code -eq "") {
   'Authorisation Code is empty'
   Exit 1
 } else {
@@ -13,7 +13,7 @@ if ($AuthCode -eq $null -or $AuthCode -eq "") {
 Signature = "WindowsNT"
 
 [NewRequest]
-Subject = "'+$AuthCode+'"
+Subject = "'+$authorisation_code+'"
 Exportable = TRUE
 KeyLength = 2048'
   $inffile | Out-File csrfile.inf

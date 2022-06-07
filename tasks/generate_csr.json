@@ -3,7 +3,7 @@
   "supports_noop": false,
   "description": "NatWest generate CSR",
   "parameters": {
-     "AuthCode": {
+     "authorisation_code": {
         "description": "Authorisation code from ServiceNow Ticket",
         "type": "String[1]"
      }

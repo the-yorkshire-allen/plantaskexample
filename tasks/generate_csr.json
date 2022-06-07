@@ -1,0 +1,11 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "NatWest generate CSR",
+  "parameters": {
+     "AuthCode": {
+        "description": "Authorisation code from ServiceNow Ticket",
+        "type": "String[1]"
+     }
+  }
+}
